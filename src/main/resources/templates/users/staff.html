@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Dashboard</title>
+    <style>
+        /* Layout tổng thể */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Menu bên trái */
+        .sidebar {
+            width: 20%;
+            background-color: #34495e;
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .sidebar h1 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        .sidebar ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Nội dung bên phải */
+        .content {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #ecf0f1;
+        }
+
+        .content h2 {
+            margin-top: 0;
+        }
+
+        .logout {
+            margin-top: 20px;
+        }
+
+        .logout a {
+            color: #e74c3c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .logout a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu bên trái -->
+    <div class="sidebar">
+        <h1>Staff Menu</h1>
+        <ul>
+            <li><a href="/staff/shift-registration">Shift Registration</a></li>
+            <li><a href="/staff/chef-manager">Chef Manager</a></li>
+            <li><a href="/staff/setup-banquet">Setup Banquet</a></li>
+        </ul>
+        <div class="logout">
+            <a href="/logout">Log out</a>
+        </div>
+    </div>
+
+    <!-- Nội dung bên phải -->
+   <div class="content">
+    <h2>Welcome, Staff!</h2>
+    <p><strong>Full Name:</strong> <span th:text="${fullName}"></span></p>
+    <p><strong>Role:</strong> <span th:text="${role}"></span></p>
+    <p><strong>Last Login:</strong> <span th:text="${timeLogin}"></span></p>
+</div>
+
+</body>
+</html>
+ 	

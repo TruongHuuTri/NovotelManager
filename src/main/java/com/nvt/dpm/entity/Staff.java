@@ -59,7 +59,7 @@ public class Staff {
 
 	// 1 staff chỉ thuộc về 1 user
 	@OneToOne(mappedBy = "staff", cascade = CascadeType.ALL)
-	private User user;
+	private Users user;
 
 	
 	public int getId() {
@@ -141,11 +141,11 @@ public class Staff {
 		this.status = status;
 	}
 
-	public User getUser() {
+	public Users getUser() {
 		return user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(Users user) {
 		this.user = user;
 	}
 

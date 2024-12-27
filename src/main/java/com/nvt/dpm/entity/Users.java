@@ -6,7 +6,7 @@ import jakarta.validation.constraints.*;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class Users {
 
     /* User (người dùng): id, username, password, fullName, role */
     @Id

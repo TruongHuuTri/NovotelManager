@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novotel SaiGon Centre</title>
+    <style>
+       body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.content {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.action-btn {
+    background-color: rgba(0, 0, 255, 0.7);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    margin: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.action-btn:hover {
+    background-color: rgba(0, 0, 255, 0.9);
+}
+
+.form-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+}
+
+.form-container input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container button {
+    background-color: rgba(0, 0, 255, 0.7);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close-btn {
+    background-color: red;
+    color: white;
+}
+
+    </style>
+</head>
+<body>
+    <div class="background">
+        <img src="https://via.placeholder.com/1200x800" alt="Novotel SaiGon Centre" class="bg-image">
+        <div class="content">
+            <h1>Novotel SaiGon Centre</h1>
+            <button id="loginBtn" class="action-btn">Log In</button>
+            <button id="signinBtn" class="action-btn">Sign In</button>
+        </div>
+    </div>
+
+    <!-- Form đăng nhập -->
+    <div id="loginForm" class="form-container hidden">
+        <h2>Log In</h2>
+        <form>
+            <label for="loginEmail">Email:</label>
+            <input type="email" id="loginEmail" placeholder="Enter your email">
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" placeholder="Enter your password">
+            <button type="submit">Submit</button>
+            <button type="button" id="closeLoginForm" class="close-btn">Close</button>
+        </form>
+    </div>
+
+    <!-- Form đăng ký -->
+    <div id="signinForm" class="form-container hidden">
+        <h2>Sign In</h2>
+        <form>
+            <label for="signinEmail">Email:</label>
+            <input type="email" id="signinEmail" placeholder="Enter your email">
+            <label for="signinPassword">Password:</label>
+            <input type="password" id="signinPassword" placeholder="Enter your password">
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" placeholder="Confirm your password">
+            <button type="submit">Submit</button>
+            <button type="button" id="closeSigninForm" class="close-btn">Close</button>
+        </form>
+    </div>
+
+    <script>
+ // Lấy các phần tử từ DOM
+    const loginBtn = document.getElementById('loginBtn');
+    const signinBtn = document.getElementById('signinBtn');
+    const loginForm = document.getElementById('loginForm');
+    const signinForm = document.getElementById('signinForm');
+    const closeLoginForm = document.getElementById('closeLoginForm');
+    const closeSigninForm = document.getElementById('closeSigninForm');
+
+    // Hiển thị form đăng nhập
+    loginBtn.addEventListener('click', () => {
+        loginForm.classList.remove('hidden');
+    });
+
+    // Hiển thị form đăng ký
+    signinBtn.addEventListener('click', () => {
+        signinForm.classList.remove('hidden');
+    });
+
+    // Đóng form đăng nhập
+    closeLoginForm.addEventListener('click', () => {
+        loginForm.classList.add('hidden');
+    });
+
+    // Đóng form đăng ký
+    closeSigninForm.addEventListener('click', () => {
+        signinForm.classList.add('hidden');
+    });
+
+        
+    </script>
+</body>
+</html>
